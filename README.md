@@ -2,8 +2,8 @@ Installation:
 
 Create a directory
 
->> mkdir co_project
->> cd co_project 
+>> mkdir even_hosting
+>> cd even_hosting 
 
 Extract the ZIP file
 
