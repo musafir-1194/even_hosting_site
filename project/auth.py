@@ -31,7 +31,7 @@ def login_post():
 
     # if the above check passes, then we know the user has the right credentials
     login_user(user, remember=remember)
-    return redirect(url_for('main.profile'))
+    return redirect(url_for('events.profile'))
 
 @auth.route('/signup', methods=['GET'])
 def signup():
@@ -65,7 +65,7 @@ def signup_post():
 def logout():
     logout_user()
  
-    return redirect(url_for('main.index'))
+    return redirect(url_for('events.index'))
 
 @auth.route('/events', methods=['GET'])
 def events():
@@ -103,13 +103,13 @@ def event_host():
         
         if t_host :
             flash('Event is already assigned to User')
-            return redirect(url_for('main.index'))
+            return redirect(url_for('events.index'))
         
         host=Host(u_id=user_id, e_id=event_id)
         db.session.add(host)
         db.session.commit()
         flash('Event assigned to User')
         
-        return redirect(url_for('main.host'))
+        return redirect(url_for('events.host'))
     flash('User not registered. Please register first')
     return redirect(url_for('auth.signup'))

@@ -5,14 +5,14 @@ from . import db
 import sqlite3 as sql
 from datetime import date
 
-main = Blueprint('main', __name__)
+events = Blueprint('events', __name__)
 
-@main.route('/')
+@events.route('/')
 def index():
     events=Event.query.all()
     return render_template('home.html',rows = events)
 
-@main.route('/profile')
+@events.route('/profile')
 def profile():
     user=User.query.filter_by(username=current_user.username).first() 
     print("Hello done")
@@ -24,11 +24,11 @@ def profile():
 
     return render_template('profile.html', username=current_user.username,host_list=event_list)
 
-@main.route('/addevents')
+@events.route('/addevents')
 def addevents():
     return render_template('addevents.html')
 
-@main.route('/host', methods=['POST','GET'])
+@events.route('/host', methods=['POST','GET'])
 def host():
     i=request.args['id']
     event=Event.query.filter_by(id=i).first()
