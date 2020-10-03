@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="title">
+    Welcome, {{ username }}! Let's Start Coding
+  </h1>
+<div class="container">
+  <table class="table is-fullwidth table-container">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {% for row in host_list %}
+      <tr>
+        <td>{{ row['title'] }}</td>
+        <td>{{ row['s_date'] }}</td>
+        <td>{{ row['e_date'] }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+  
+{% endblock %}

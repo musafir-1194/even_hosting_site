@@ -1,0 +1,16 @@
+.separate{
+    margin-top: 10px;
+}
+h1 {
+    font-size: 42px !important;
+}
+h2 {
+    font-size: 38px !important;
+}
+h3 {
+    font-size: 30px !important;
+}
+
+table tr td {
+    padding: 5px 20px;
+}

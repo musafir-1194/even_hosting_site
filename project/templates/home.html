@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+  <table class="table is-hoverable is-fullwidth table-container">
+    <thead>
+      <tr>
+        <th>S.No</th>
+        <th>Title</th>
+        <th>Start Date & Time</th>
+        <th>End Date & Time</th>
+        <th>Host</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {% for row in rows %}
+      <tr>
+        <td>{{ row['id'] }}</td>
+        <td>{{ row['title'] }}</td>
+        <td>{{ row['s_date'] }}</td>
+        <td>{{ row['e_date'] }}</td>
+        <td>
+          <a href="host?id={{ row['id'] }}">Submit</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}
